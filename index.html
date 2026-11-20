@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piyush Kharola — Full-Stack &amp; AI Engineer</title>
-<meta name="description" content="Portfolio of Sneha Sharma — B.Tech CSE, Graphic Era Hill University. Full-stack & AI engineer building SheSays, ATSlay, and VibeOps.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ffe3ec%22 stroke=%22%23e0457b%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 fill=%22%23e0457b%22 text-anchor=%22middle%22 font-family=%22serif%22>S</text></svg>">
+<title>Piyush Kharola — Computer Science Student &amp; iOS Developer</title>
+<meta name="description" content="Portfolio of Piyush Kharola, a Computer Science student and iOS developer in Dehradun, Uttarakhand, India. Explore projects in scheduling, quizzes, attendance, and e-commerce.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ffe3ec%22 stroke=%22%23e0457b%22 stroke-width=%224%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 fill=%22%23e0457b%22 text-anchor=%22middle%22 font-family=%22serif%22>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -318,27 +318,15 @@
     font-style:italic;font-size:14px;color:var(--gold-bright);
   }
   .about-body p{color:var(--ivory-dim);line-height:1.85;font-size:16px;margin-bottom:20px;}
-  .philosophy{
-    margin-top:36px;padding:28px 32px;border-left:2px solid var(--gold);
-    background:rgba(224,69,123,0.04);
-  }
-  .philosophy p{
-    font-family:var(--serif-italic);font-style:italic;font-size:19px;color:var(--gold-bright);
-    line-height:1.7;margin:0;
-  }
 
   /* ============ LIVE STATS ============ */
   #stats{padding-top:80px;padding-bottom:80px;}
   .stats-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    display:grid;grid-template-columns:1fr;gap:1px;
     background:var(--hairline);border:1px solid var(--hairline);
   }
   .stat-card{
     background:var(--ink);padding:36px 24px;text-align:center;
-  }
-  .stats-note{
-    max-width:720px;margin:28px auto 0;text-align:center;font-family:var(--serif-italic);
-    font-style:italic;font-size:14px;color:var(--ivory-dim);line-height:1.7;
   }
   .heatmap-panel{margin-top:60px;border:1px solid var(--hairline);padding:32px 36px;background:var(--ink);}
   .heatmap-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:22px;}
@@ -355,10 +343,6 @@
   .hm-cell[data-level="2"]{background:#fba7c4;}
   .hm-cell[data-level="3"]{background:#ee6f9c;}
   .hm-cell[data-level="4"]{background:#c2185b;}
-  .hm-cell.lc[data-level="1"]{background:#eadcff;}
-  .hm-cell.lc[data-level="2"]{background:#cdb2fb;}
-  .hm-cell.lc[data-level="3"]{background:#a17ff0;}
-  .hm-cell.lc[data-level="4"]{background:#7a4fd6;}
   @media(max-width:700px){.heatmap-panel{padding:24px 20px;}}
   .stat-num{
     font-family:var(--serif);font-size:clamp(30px,3vw,44px);color:var(--gold-bright);
@@ -368,7 +352,6 @@
     font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ivory-dim);margin-top:8px;
   }
   .stat-sub{font-size:11px;color:var(--gold-dim);margin-top:4px;}
-  @media(max-width:800px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
 
   /* ============ EXPERIENCE ============ */
   .timeline{position:relative;margin-top:60px;}
@@ -401,7 +384,7 @@
   .card-inner{position:relative;width:100%;height:100%;min-height:380px;transition:transform .7s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
   .project-card.flipped .card-inner{transform:rotateY(180deg);}
   .card-face{backface-visibility:hidden;position:absolute;inset:0;}
-  .card-face.front{display:grid;grid-template-columns:1fr 1fr;}
+  .card-face.front{position:relative;min-height:inherit;display:grid;grid-template-columns:1fr 1fr;}
   .project-card.flip .card-face.front{grid-template-columns:1fr 1fr;}
   .project-card.flip .card-face.front .p-visual{order:2;}
   .card-face.back{
@@ -435,7 +418,7 @@
     position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:2px;
     color:var(--gold-dim);text-transform:uppercase;z-index:2;
   }
-  .p-body{padding:46px;display:flex;flex-direction:column;justify-content:center;overflow:auto;}
+  .p-body{padding:46px;display:flex;flex-direction:column;justify-content:center;}
   .p-name{font-family:var(--serif);font-size:30px;color:var(--ivory);margin-bottom:6px;}
   .p-tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:18px;}
   .p-desc{color:var(--ivory-dim);line-height:1.8;font-size:15px;margin-bottom:22px;}
@@ -459,7 +442,7 @@
 
   /* ============ SKILLS ============ */
   .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px;}
-  .skill-cat h4{
+  .skill-cat h3{
     font-family:var(--serif);font-size:18px;color:var(--gold-bright);margin-bottom:18px;
     padding-bottom:12px;border-bottom:1px solid var(--hairline);
   }
@@ -600,6 +583,20 @@
   #ambientCanvas{opacity:.7;}
   .dust{background:#ff9cc0;box-shadow:0 0 8px 2px rgba(224,69,123,.6);}
   ::selection{background:#ffc2d8;color:#3d1626;}
+  .portrait-monogram,.about-monogram{
+    display:grid;place-items:center;aspect-ratio:1 / 1.12;
+    background:radial-gradient(circle at 55% 35%,#fff 0%,var(--ink-3) 68%);
+    color:var(--gold-bright);font-family:var(--serif);font-size:clamp(68px,12vw,160px);
+  }
+  .portrait-monogram{border-radius:999px 999px 20px 20px;}
+  .about-monogram{aspect-ratio:1;border:1px solid var(--hairline);border-radius:22px;}
+  .nav-toggle,.p-visual,.flip-back{border:0;font:inherit;color:inherit;}
+  .nav-toggle,.flip-back{background:none;}
+  .p-visual{min-width:0;min-height:220px;}
+  .flip-back{margin-top:18px;color:var(--gold-bright);text-decoration:underline;}
+  .heatmap-panel > a{display:inline-block;margin-top:8px;color:var(--gold-bright);text-decoration:underline;}
+  footer a{text-decoration:underline;}
+  @media(max-width:900px){.p-body{overflow-wrap:anywhere;}}
 </style>
 </head>
 <body>
@@ -616,9 +613,9 @@
       <circle class="seal-shockwave" cx="70" cy="70" r="66"></circle>
       <circle class="seal-ring" cx="70" cy="70" r="66"></circle>
       <path class="seal-crack" d="M45,40 L60,75 L50,80 L90,110"></path>
-      <text class="seal-letter" x="70" y="88" text-anchor="middle">S</text>
+      <text class="seal-letter" x="70" y="88" text-anchor="middle">P</text>
     </svg>
-    <div class="splash-label">Sneha Sharma</div>
+    <div class="splash-label">Piyush Kharola</div>
   </div>
 </div>
 
@@ -626,7 +623,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="brand"><span class="mono">S</span> Sneha Sharma</div>
+  <div class="brand"><span class="mono">P</span> Piyush Kharola</div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -635,7 +632,7 @@
     <li><a href="#certs">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -645,9 +642,9 @@
   <div class="parallax-el parallax-diamond" data-speed="0.22" style="top:30%;left:12%;"></div>
   <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow reveal in">Portfolio · Dehradun, India</div>
-      <h1 class="hero-name reveal in">Sneha<span class="last">Sharma</span></h1>
-      <p class="hero-tagline reveal in reveal-delay-1" id="typewriterTarget" data-full-text="Full-Stack &amp; AI Engineer — building systems that are honest about what they don't know, from multi-agent orchestration to production web apps."></p>
+      <div class="hero-eyebrow reveal in">Portfolio · Dehradun, Uttarakhand, India</div>
+      <h1 class="hero-name reveal in">Piyush<span class="last">Kharola</span></h1>
+      <p class="hero-tagline reveal in reveal-delay-1" id="typewriterTarget" data-full-text="Computer Science Student | iOS Developer | Software Development Enthusiast">Computer Science Student | iOS Developer | Software Development Enthusiast</p>
       <div class="hero-cta reveal in reveal-delay-2">
         <a href="#projects" class="btn">View Work</a>
         <a href="#contact" class="btn ghost">Get In Touch</a>
@@ -655,7 +652,7 @@
     </div>
     <div class="hero-portrait reveal in reveal-delay-1">
       <div class="portrait-frame">
-        <img src="assets/hero.jpg" alt="Sneha Sharma">
+        <div class="portrait-monogram" aria-hidden="true">PK</div>
       </div>
     </div>
   </div>
@@ -668,17 +665,14 @@
   <div class="parallax-el parallax-ring" data-speed="0.1" style="bottom:8%;right:16%;"></div>
   <div class="about-grid">
     <div class="about-img-wrap reveal">
-      <img src="assets/about.jpg" alt="Sneha Sharma">
-      <div class="frame-tag">est. MMXXIV</div>
+      <div class="about-monogram" aria-hidden="true">PK</div>
+      <div class="frame-tag">GEHU · Class of 2028</div>
     </div>
     <div class="about-body">
       <div class="section-frame reveal"><div class="eyebrow">About</div>
       <h2 class="title">The engineer behind <em>the code</em></h2></div>
-      <p class="reveal reveal-delay-1">I'm a third-year B.Tech Computer Science student at Graphic Era Hill University, Dehradun. I build full-stack products and AI systems — currently interning as an AI-Assisted Full Stack Developer at TBI-GEU and an AI Intern at Mirai School of Technology, alongside AWS certifications in Cloud and AI.</p>
-      <p class="reveal reveal-delay-2">Outside of internships, I ship my own projects end to end — design, backend, deployment — because I'd rather learn from a live app with real users than a tutorial.</p>
-      <div class="philosophy reveal reveal-delay-3">
-        <p>"I like building things that admit what they don't know. SheSays exists because a comment box shouldn't feel like a courtroom. VibeOps exists because I got tired of manually relaying context between AI tools — so I built the relay instead. ATSlay exists because a candidate deserves to see exactly which keywords are missing, not a mysterious black-box score. Every project I ship documents its own limits — pretending v1 is perfect is the fastest way to stop improving it."</p>
-      </div>
+      <p class="reveal reveal-delay-1">I'm a B.Tech Computer Science and Engineering student at Graphic Era Hill University in Dehradun. I'm interested in software development, algorithms, and native iOS apps. Through the Apple and Infosys iOS Student Developer Program, I'm building hands-on experience with Swift and Xcode.</p>
+      <p class="reveal reveal-delay-2">My projects span timetable scheduling, topic-based quizzes, attendance management, and command-line e-commerce. I've worked with Python, Java, C++, and Swift across these projects and my training.</p>
     </div>
   </div>
 </section>
@@ -689,31 +683,15 @@
     <div class="stat-card reveal">
       <div class="stat-num" id="statRepos">—</div>
       <div class="stat-label">Public Repositories</div>
-      <div class="stat-sub">Live via GitHub</div>
-    </div>
-    <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-num" id="statLeetcode">—</div>
-      <div class="stat-label">LeetCode Solved</div>
-      <div class="stat-sub">Live count</div>
-    </div>
-    <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Shipped Projects</div>
-      <div class="stat-sub">Deployed &amp; live</div>
-    </div>
-    <div class="stat-card reveal reveal-delay-3">
-      <div class="stat-num">11</div>
-      <div class="stat-label">Certifications</div>
-      <div class="stat-sub">AWS, Oracle, MongoDB &amp; More</div>
+      <div class="stat-sub" id="statReposStatus" role="status">Live via GitHub</div>
     </div>
   </div>
-  <p class="stats-note reveal">Note on method: I solve most problems offline in a notebook first, then batch-push verified solutions to LeetCode — so the solved count above will often outpace my visibly "active" days on the platform itself.</p>
 
   <div class="heatmap-panel reveal">
     <div class="heatmap-header">
       <div>
         <div class="heatmap-title">GitHub Activity</div>
-        <div class="heatmap-sub" id="heatmapSub">Loading commit history…</div>
+        <div class="heatmap-sub" id="heatmapSub" role="status">Loading contributions…</div>
       </div>
       <div class="heatmap-legend">
         <span>Less</span>
@@ -725,27 +703,10 @@
         <span>More</span>
       </div>
     </div>
-    <div id="heatmapGrid" class="heatmap-grid"></div>
+    <div id="heatmapGrid" class="heatmap-grid" role="group" aria-label="GitHub contribution calendar"></div>
+    <a href="https://github.com/kharolapiyush">View GitHub profile ↗</a>
   </div>
 
-  <div class="heatmap-panel reveal" style="margin-top:26px;">
-    <div class="heatmap-header">
-      <div>
-        <div class="heatmap-title">LeetCode Activity</div>
-        <div class="heatmap-sub" id="lcHeatmapSub">Loading submission history…</div>
-      </div>
-      <div class="heatmap-legend">
-        <span>Less</span>
-        <span class="hm-cell lc" data-level="0"></span>
-        <span class="hm-cell lc" data-level="1"></span>
-        <span class="hm-cell lc" data-level="2"></span>
-        <span class="hm-cell lc" data-level="3"></span>
-        <span class="hm-cell lc" data-level="4"></span>
-        <span>More</span>
-      </div>
-    </div>
-    <div id="lcHeatmapGrid" class="heatmap-grid"></div>
-  </div>
 </section>
 
 <div class="divider"></div>
@@ -753,40 +714,17 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-frame reveal"><div class="eyebrow">Experience</div>
-  <h2 class="title">Where I've been <em>building</em></h2></div>
+  <h2 class="title">Where I’ve been <em>building</em></h2></div>
   <div class="timeline">
     <div class="t-item reveal">
       <div class="t-dot"></div>
-      <div class="t-role">Trainee Developer</div>
+      <div class="t-role">iOS Trainee Developer</div>
       <div class="t-org">iOS Student Developer Program — Apple &amp; Infosys</div>
-      <div class="t-meta">Jul 2026 – Present · Dehradun, India</div>
+      <div class="t-meta">July 2026 – Present · Dehradun, India</div>
       <ul class="t-list">
-        <li>Selected as 1 of 100 students from a pool of 1,000+ applicants across 4 Graphic Era campuses after qualifying the Infosys technical assessment and a four-day bootcamp for a one-year training program</li>
-        <li>Undergoing training in native iOS application development using Swift and Xcode, building hands-on projects under Apple's curriculum alongside mentors and a cohort of peer developers</li>
-      </ul>
-    </div>
-    <div class="t-item reveal">
-      <div class="t-dot"></div>
-      <div class="t-role">Artificial Intelligence Intern</div>
-      <div class="t-org">Mirai School of Technology</div>
-      <div class="t-meta">Jul 2026 – Aug 2026 · Remote</div>
-      <ul class="t-list">
-        <li>8-week hands-on program across AI/ML, data science, and neural networks, applying software engineering best practices in Python</li>
-        <li>Built RepJudge, a Streamlit + Gemini Vision app that scores pushup/squat form from a live camera photo and returns checkpoint-level biomechanical feedback</li>
-        <li>Built Life-OS, a Streamlit wellbeing dashboard that visualizes screen-time trends and uses the Gemini API to generate a personalized AI coaching ledger</li>
-      </ul>
-    </div>
-    <div class="t-item reveal">
-      <div class="t-dot"></div>
-      <div class="t-role">AI-Assisted Full Stack Web Development Intern</div>
-      <div class="t-org">Technology Business Incubator, Graphic Era University (TBI-GEU)</div>
-      <div class="t-meta">Jun 2026 – Aug 2026 · Hybrid</div>
-      <ul class="t-list">
-        <li>Built responsive, component-based frontends with React/Next.js and Tailwind CSS</li>
-        <li>Developed RESTful APIs with Node.js (Express) and Python (FastAPI)</li>
-        <li>Integrated AI APIs (OpenAI, Gemini) for intelligent application features</li>
-        <li>Shipped VanaVas, a full-stack Uttarakhand homestay booking platform: JWT + Google OAuth authentication with an email-OTP admin flow, real-time booking updates via Socket.io, role-based access for travelers/hosts/admins, and an AI Trip Planner that streams personalized homestay recommendations</li>
-        <li>Got a letter of Recommendation from the CEO of TBI-GEU</li>
+        <li>Develop native iOS applications with Swift and Xcode.</li>
+        <li>Practice app architecture, interface design, and debugging.</li>
+        <li>Build hands-on iOS projects with industry mentors.</li>
       </ul>
     </div>
   </div>
@@ -797,114 +735,119 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-frame reveal"><div class="eyebrow">Selected Work</div>
-  <h2 class="title">Four products, <em>shipped</em></h2></div>
+  <h2 class="title">Projects I’ve <em>built</em></h2></div>
   <div class="projects-grid">
-
-    <div class="project-card tilt reveal" id="cardSheSays">
+    <article class="project-card tilt reveal">
       <div class="card-inner">
         <div class="card-face front">
-          <div class="p-visual" onclick="document.getElementById('cardSheSays').classList.toggle('flipped')"><div class="p-index">01</div><div class="p-visual-name">SheSays</div><div class="flip-hint">Tap to flip ⟲</div></div>
+          <button type="button" class="p-visual" data-flip aria-label="Show highlight for Advanced Timetable Generator &amp; Conflict Resolver">
+            <span class="p-index" aria-hidden="true">01</span>
+            <span class="p-visual-name">Timetable Generator</span>
+            <span class="flip-hint" aria-hidden="true">Tap to flip ⟲</span>
+          </button>
           <div class="p-body">
-            <div class="p-name">SheSays</div>
-            <div class="p-tag">MERN · Community Platform</div>
-            <p class="p-desc">A safe-space blogging platform for women to share stories anonymously or openly. Full auth flow, Cloudinary media uploads, likes and comments, deployed as a production MERN app.</p>
-            <div class="p-stack">
-              <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span>
-              <span class="chip">MongoDB</span><span class="chip">JWT</span><span class="chip">Cloudinary</span>
-            </div>
+            <h3 class="p-name">Advanced Timetable Generator &amp; Conflict Resolver</h3>
+            <div class="p-tag">Scheduling · Constraint Satisfaction</div>
+            <p class="p-desc">Generates college timetables, flags scheduling conflicts, and supports local repairs when classes need to move.</p>
+            <div class="p-stack"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Streamlit</span><span class="chip">Backtracking</span><span class="chip">Greedy heuristics</span></div>
             <div class="p-links">
-              <a href="shesays.html">Case Study →</a>
-              <a href="https://github.com/snehasharmaa912-ops/SheSays" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="timetable-generator.html" aria-label="Advanced Timetable Generator &amp; Conflict Resolver case study">Case Study →</a>
+              <a href="https://github.com/kharolapiyush/Time_Table_Generator_and_Conflict_Resolver" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
         </div>
-        <div class="card-face back" onclick="document.getElementById('cardSheSays').classList.toggle('flipped')">
-          <div class="back-label">Why it matters</div>
-          <div class="back-stat">Full Auth + Media</div>
-          <div class="back-note">JWT-secured accounts, Cloudinary-hosted uploads, and a like/comment system — built as a real community product, not a demo.</div>
+        <div class="card-face back" inert>
+          <div class="back-label">Project Highlight</div>
+          <div class="back-stat">Minimal-change rescheduling</div>
+          <p class="back-note">A local repair can preserve unaffected assignments when a timetable needs an adjustment.</p>
+          <button type="button" class="flip-back" data-flip aria-label="Show details for Advanced Timetable Generator &amp; Conflict Resolver">Flip back ⟲</button>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="project-card tilt flip reveal" id="cardATSlay">
+    <article class="project-card tilt flip reveal">
       <div class="card-inner">
         <div class="card-face front">
-          <div class="p-visual" onclick="document.getElementById('cardATSlay').classList.toggle('flipped')"><div class="p-index">02</div><div class="p-visual-name">ATSlay</div><div class="flip-hint">Tap to flip ⟲</div></div>
+          <button type="button" class="p-visual" data-flip aria-label="Show highlight for TopicWise Quiz Generator">
+            <span class="p-index" aria-hidden="true">02</span>
+            <span class="p-visual-name">TopicWise</span>
+            <span class="flip-hint" aria-hidden="true">Tap to flip ⟲</span>
+          </button>
           <div class="p-body">
-            <div class="p-name">ATSlay</div>
-            <div class="p-tag">AI · NLP Resume Analyzer</div>
-            <p class="p-desc">An ATS resume scorer built on real NLP — not a black box. Uses TF-IDF, cosine similarity, and Porter stemming to show exactly which keywords a resume is missing against a job description. Full auth and scan history, deployed via Docker.</p>
-            <div class="p-stack">
-              <span class="chip">Python</span><span class="chip">NLP</span><span class="chip">TF-IDF</span>
-              <span class="chip">Docker</span><span class="chip">JWT</span>
-            </div>
+            <h3 class="p-name">TopicWise Quiz Generator</h3>
+            <div class="p-tag">Web App · Topic-Based Quizzes</div>
+            <p class="p-desc">Lets students take topic-based quizzes and track scores. An admin interface generates quiz links and shows the leaderboard.</p>
+            <div class="p-stack"><span class="chip">Java 17</span><span class="chip">Spring Boot</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">REST APIs</span></div>
             <div class="p-links">
-              <a href="atslay.html">Case Study →</a>
-              <a href="https://github.com/snehasharmaa912-ops/ATSlay" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="topicwise-quiz.html" aria-label="TopicWise Quiz Generator case study">Case Study →</a>
+              <a href="https://github.com/kharolapiyush/Quiz_Generator" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
         </div>
-        <div class="card-face back" onclick="document.getElementById('cardATSlay').classList.toggle('flipped')">
-          <div class="back-label">Why it matters</div>
-          <div class="back-stat">Explainable Scoring</div>
-          <div class="back-note">No black-box percentage — TF-IDF + cosine similarity surface the exact missing keywords, so candidates know what to fix.</div>
+        <div class="card-face back" inert>
+          <div class="back-label">Project Highlight</div>
+          <div class="back-stat">Shareable quizzes</div>
+          <p class="back-note">Admins can generate quiz links and review submitted scores in one place.</p>
+          <button type="button" class="flip-back" data-flip aria-label="Show details for TopicWise Quiz Generator">Flip back ⟲</button>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="project-card tilt reveal" id="cardVibeOps">
+    <article class="project-card tilt reveal">
       <div class="card-inner">
         <div class="card-face front">
-          <div class="p-visual" onclick="document.getElementById('cardVibeOps').classList.toggle('flipped')"><div class="p-index">03</div><div class="p-visual-name">VibeOps</div><div class="flip-hint">Tap to flip ⟲</div></div>
+          <button type="button" class="p-visual" data-flip aria-label="Show highlight for NFC Attendance Pro">
+            <span class="p-index" aria-hidden="true">03</span>
+            <span class="p-visual-name">NFC Attendance Pro</span>
+            <span class="flip-hint" aria-hidden="true">Tap to flip ⟲</span>
+          </button>
           <div class="p-body">
-            <div class="p-name">VibeOps</div>
-            <div class="p-tag">AI · Multi-Agent Orchestration</div>
-            <p class="p-desc">A multi-agent AI orchestrator built with LangGraph and the Claude API, with shared memory across agents via SQLite and ChromaDB. Includes retry/failure handling, a full test suite (8/8 passing), and CI via GitHub Actions.</p>
-            <div class="p-stack">
-              <span class="chip">LangGraph</span><span class="chip">Claude API</span><span class="chip">SQLite</span>
-              <span class="chip">ChromaDB</span><span class="chip">Streamlit</span><span class="chip">GitHub Actions</span>
-            </div>
+            <h3 class="p-name">NFC Attendance Pro</h3>
+            <div class="p-tag">Attendance · NFC &amp; Computer Vision</div>
+            <p class="p-desc">Records attendance from NFC scans with webcam verification, live updates, and PDF reports.</p>
+            <div class="p-stack"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Flask-SocketIO</span><span class="chip">NFC</span><span class="chip">OpenCV</span><span class="chip">Pandas</span><span class="chip">ReportLab</span></div>
             <div class="p-links">
-              <a href="vibeops.html">Case Study →</a>
-              <a href="https://github.com/snehasharmaa912-ops/VibeOps" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="nfc-attendance.html" aria-label="NFC Attendance Pro case study">Case Study →</a>
+
             </div>
           </div>
         </div>
-        <div class="card-face back" onclick="document.getElementById('cardVibeOps').classList.toggle('flipped')">
-          <div class="back-label">Why it matters</div>
-          <div class="back-stat">8/8 Tests Passing</div>
-          <div class="back-note">Shared memory across agents, automatic retries on failure, and CI on every push — built like production infrastructure, not a notebook demo.</div>
+        <div class="card-face back" inert>
+          <div class="back-label">Project Highlight</div>
+          <div class="back-stat">Live attendance updates</div>
+          <p class="back-note">Attendance changes appear in real time and can be turned into a PDF report.</p>
+          <button type="button" class="flip-back" data-flip aria-label="Show details for NFC Attendance Pro">Flip back ⟲</button>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="project-card tilt reveal" id="cardPayFlow">
+    <article class="project-card tilt flip reveal">
       <div class="card-inner">
         <div class="card-face front">
-          <div class="p-visual" onclick="document.getElementById('cardPayFlow').classList.toggle('flipped')"><div class="p-index">04</div><div class="p-visual-name">PayFlow v2</div><div class="flip-hint">Tap to flip ⟲</div></div>
+          <button type="button" class="p-visual" data-flip aria-label="Show highlight for Command-Line E-Commerce System">
+            <span class="p-index" aria-hidden="true">04</span>
+            <span class="p-visual-name">Command-Line E-Commerce</span>
+            <span class="flip-hint" aria-hidden="true">Tap to flip ⟲</span>
+          </button>
           <div class="p-body">
-            <div class="p-name">PayFlow v2</div>
-            <div class="p-tag">Go · Scala · Ruby · Payments Platform</div>
-            <p class="p-desc">A production-grade payments system built around one rule: money can never appear or disappear. Double-entry ledger bookkeeping, write-ahead logging with on-demand replay verification, and a fail-safe risk engine — plus a concurrency bug I found, reproduced with a genuine 50-request race test, and fixed at the lock-scoping level. Load-tested in CI with k6 at 161 req/s and a 2.81ms p95 latency, with 50.7% Go / 83.3% Ruby / 67.7% Scala test coverage enforced on every push.</p>
-            <div class="p-stack">
-              <span class="chip">Go</span><span class="chip">Scala</span><span class="chip">Ruby</span>
-              <span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">HMAC-SHA256</span>
-            </div>
+            <h3 class="p-name">Command-Line E-Commerce System</h3>
+            <div class="p-tag">Command Line · Shopping Workflow</div>
+            <p class="p-desc">A terminal-based shopping workflow with product browsing, cart management, and order processing.</p>
+
             <div class="p-links">
-              <a href="payflow.html">Case Study →</a>
-              <a href="https://github.com/snehasharmaa912-ops/PayFlow-v2" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/snehasharmaa912-ops/PayFlow-v2/actions/workflows/load-test.yml" target="_blank" rel="noopener">CI Results ↗</a>
+              <a href="cli-ecommerce.html" aria-label="Command-Line E-Commerce System case study">Case Study →</a>
+
             </div>
           </div>
         </div>
-        <div class="card-face back" onclick="document.getElementById('cardPayFlow').classList.toggle('flipped')">
-          <div class="back-label">Why it matters</div>
-          <div class="back-stat">Caught a Real Race Condition</div>
-          <div class="back-note">Found a TOCTOU bug where the same idempotency key could create two charges, wrote a concurrent load test that reproduced it on the first run, then fixed it by collapsing check-and-write into one critical section. Now backed by an automated k6 load test (161 req/s, 2.81ms p95) and coverage tracking, all running in CI on every push.</div>
+        <div class="card-face back" inert>
+          <div class="back-label">Project Highlight</div>
+          <div class="back-stat">A modular shopping flow</div>
+          <p class="back-note">Products, carts, and orders have distinct responsibilities as shoppers move from browsing to checkout.</p>
+          <button type="button" class="flip-back" data-flip aria-label="Show details for Command-Line E-Commerce System">Flip back ⟲</button>
         </div>
       </div>
-    </div>
-
+    </article>
   </div>
 </section>
 
@@ -916,114 +859,52 @@
   <h2 class="title">What I <em>build with</em></h2></div>
   <div class="skills-grid">
     <div class="skill-cat reveal">
-      <h4>Languages &amp; Core</h4>
-      <div class="skill-tags">
-        <span>JavaScript</span><span>Python</span><span>Java</span><span>C++</span><span>Go</span><span>Scala</span><span>Ruby</span><span>OOP</span><span>Data Structures &amp; Algorithms</span>
-      </div>
-    </div>
-    <div class="skill-cat reveal reveal-delay-1">
-      <h4>Frontend &amp; Backend</h4>
-      <div class="skill-tags">
-        <span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>FastAPI</span>
-      </div>
-    </div>
-    <div class="skill-cat reveal reveal-delay-2">
-      <h4>AI &amp; Data</h4>
-      <div class="skill-tags">
-        <span>LangGraph</span><span>Claude API</span><span>NLP</span><span>TF-IDF</span><span>MongoDB</span><span>PostgreSQL</span><span>SQLite</span><span>ChromaDB</span>
-      </div>
+      <h3>Languages</h3>
+      <div class="skill-tags"><span>C</span><span>C++</span><span>Python</span><span>Java</span><span>Swift</span></div>
     </div>
     <div class="skill-cat reveal">
-      <h4>Cloud &amp; DevOps</h4>
-      <div class="skill-tags">
-        <span>AWS</span><span>Docker</span><span>GitHub Actions</span><span>Vercel</span><span>Render</span>
-      </div>
+      <h3>iOS Development</h3>
+      <div class="skill-tags"><span>SwiftUI</span><span>Xcode</span></div>
     </div>
-    <div class="skill-cat reveal reveal-delay-1">
-      <h4>Auth &amp; Testing</h4>
-      <div class="skill-tags">
-        <span>JWT</span><span>HMAC-SHA256</span><span>Idempotency Keys</span><span>Rate Limiting</span><span>Pytest</span><span>Postman</span><span>Cloudinary</span>
-      </div>
+    <div class="skill-cat reveal">
+      <h3>Web &amp; APIs</h3>
+      <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>Flask-SocketIO</span><span>Spring Boot</span><span>REST APIs</span><span>WebSockets</span></div>
     </div>
-    <div class="skill-cat reveal reveal-delay-2">
-      <h4>Currently Sharpening</h4>
-      <div class="skill-tags">
-        <span>Computer Vision</span><span>Neural Networks</span><span>System Design</span>
-      </div>
+    <div class="skill-cat reveal">
+      <h3>Data &amp; Devices</h3>
+      <div class="skill-tags"><span>Streamlit</span><span>OpenCV</span><span>Pandas</span><span>ReportLab</span><span>NFC</span></div>
+    </div>
+    <div class="skill-cat reveal">
+      <h3>Core Skills</h3>
+      <div class="skill-tags"><span>Data Structures</span><span>Algorithms</span><span>OOP</span><span>Problem Solving</span><span>Debugging</span><span>Code Optimization</span></div>
     </div>
   </div>
 </section>
 
 <!-- CERTIFICATIONS -->
 <section id="certs">
-  <div class="section-frame reveal"><div class="eyebrow">Certifications</div>
-  <h2 class="title">Verified <em>credentials</em></h2></div>
+  <div class="section-frame reveal"><div class="eyebrow">Credentials</div>
+  <h2 class="title">Certifications &amp; <em>achievements</em></h2></div>
   <div class="cert-grid">
     <div class="cert-card reveal">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Amazon Web Services</div>
-      <div class="cert-name">AI Practitioner Learning Plan</div>
-      <div class="cert-date">Completed September 2025</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-1">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Amazon Web Services</div>
-      <div class="cert-name">Cloud Practitioner Essentials</div>
-      <div class="cert-date">Completed February 2025</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-2">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Oracle</div>
-      <div class="cert-name">Agentic AI Certified Foundations Associate</div>
-      <div class="cert-date">2026</div>
+      <div class="cert-seal" aria-hidden="true">❦</div>
+      <div class="cert-org">Infosys</div>
+      <div class="cert-name">iOS Student Developer Program Bootcamp</div><div class="cert-date">July 2026</div>
     </div>
     <div class="cert-card reveal">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">MongoDB</div>
-      <div class="cert-name">AI &amp; Data Strategy Certifications — Basics, Vector Search, RAG Apps, AI Agents</div>
-      <div class="cert-date">2026</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-2">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Forage × Walmart Global Tech</div>
-      <div class="cert-name">Advanced Software Engineering Job Simulation</div>
-      <div class="cert-date">2026</div>
+      <div class="cert-seal" aria-hidden="true">❦</div>
+      <div class="cert-org">NPTEL</div>
+      <div class="cert-name">Data Science for Engineers</div>
     </div>
     <div class="cert-card reveal">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Forage × Citi</div>
-      <div class="cert-name">Technology Software Development Job Simulation</div>
-      <div class="cert-date">2026</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-1">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Forage × Commonwealth Bank</div>
-      <div class="cert-name">Software Engineering Job Simulation</div>
-      <div class="cert-date">2026</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-2">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">NPTEL × IIT Madras</div>
-      <div class="cert-name">Design and Analysis of Algorithms</div>
-      <div class="cert-date">Jan–Mar 2026 · Score: 54%</div>
+      <div class="cert-seal" aria-hidden="true">❦</div>
+      <div class="cert-org">Infosys Springboard</div>
+      <div class="cert-name">Design Thinking</div>
     </div>
     <div class="cert-card reveal">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">Udemy</div>
-      <div class="cert-name">AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents</div>
-      <div class="cert-date">June 2026 · 33.5 hours</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-1">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">NPTEL × IIT Kharagpur</div>
-      <div class="cert-name">Cloud Computing (Elite)</div>
-      <div class="cert-date">Jul–Oct 2025 · Score: 66%</div>
-    </div>
-    <div class="cert-card reveal reveal-delay-2">
-      <div class="cert-seal">❦</div>
-      <div class="cert-org">National Service Scheme</div>
-      <div class="cert-name">NSS 'B' Certificate</div>
-      <div class="cert-date">Graphic Era Hill University · 2025</div>
+      <div class="cert-seal" aria-hidden="true">❦</div>
+      <div class="cert-org">Hack-O-Holic 3.0</div>
+      <div class="cert-name">Runner-Up</div>
     </div>
   </div>
 </section>
@@ -1038,24 +919,24 @@
     <div class="edu-year">2024 – 2028</div>
     <div>
       <div class="edu-school">Graphic Era Hill University, Dehradun</div>
-      <div class="edu-degree">Bachelor of Technology — Computer Science &amp; Engineering</div>
-      <div class="edu-detail">Student Volunteer, NSS GEHU · Member, Team Aryavart · Focus: Data Structures &amp; Algorithms, Object-Oriented Programming</div>
+      <div class="edu-degree">B.Tech in Computer Science &amp; Engineering</div>
+      <div class="edu-detail">GPA 8.4/10</div>
     </div>
   </div>
   <div class="edu-item reveal">
-    <div class="edu-year">2023 – 2024</div>
+    <div class="edu-year">2024</div>
     <div>
-      <div class="edu-school">Manava Bharati India International School</div>
-      <div class="edu-degree">Senior Secondary Education — PCM + Computer Science</div>
-      <div class="edu-detail">Grade: First Division · Discipline Incharge of the School</div>
+      <div class="edu-school">Baluni Public School</div>
+      <div class="edu-degree">Class XII · CBSE</div>
+      <div class="edu-detail">68%</div>
     </div>
   </div>
   <div class="edu-item reveal">
-    <div class="edu-year">2021 – 2022</div>
+    <div class="edu-year">2022</div>
     <div>
-      <div class="edu-school">Manava Bharati India International School</div>
-      <div class="edu-degree">Secondary Education (Class X)</div>
-      <div class="edu-detail">Grade: 87.83%</div>
+      <div class="edu-school">St. Clare’s Convent School</div>
+      <div class="edu-degree">Class X · CBSE</div>
+      <div class="edu-detail">75%</div>
     </div>
   </div>
 </section>
@@ -1068,21 +949,18 @@
   <h2 class="title">Drag through <em>the timeline</em></h2></div>
 
   <div class="scrubber-wrap reveal">
-    <input type="range" id="journeySlider" class="scrubber-input" min="0" max="5" step="1" value="5">
+    <input type="range" id="journeySlider" class="scrubber-input" min="0" max="2" step="1" value="2" aria-label="Journey milestone">
     <div class="scrubber-track">
       <div class="scrubber-fill" id="scrubberFill"></div>
       <div class="scrubber-ticks">
-        <span data-year="2021">2021</span>
         <span data-year="2022">2022</span>
-        <span data-year="2023">2023</span>
         <span data-year="2024">2024</span>
-        <span data-year="2025">2025</span>
         <span data-year="2026">2026</span>
       </div>
     </div>
     <div class="scrubber-panel" id="scrubberPanel">
       <div class="scrubber-year" id="scrubberYear">2026</div>
-      <div class="scrubber-text" id="scrubberText">Interning at TBI-GEU and Mirai School of Technology, shipping SheSays, ATSlay, VibeOps and Payflow v2 and completing three Forage job simulations.</div>
+      <div class="scrubber-text" id="scrubberText">Joined the Apple &amp; Infosys iOS Student Developer Program and began building native iOS apps with Swift and Xcode.</div>
     </div>
   </div>
 </section>
@@ -1092,20 +970,18 @@
   <div class="eyebrow reveal">Get In Touch</div>
   <h2 class="contact-title reveal">Let's build something <em>worth shipping</em>.</h2>
   <div class="contact-links reveal">
-    <a href="mailto: snehasharmaa912@gmail.com"><span class="ic">✉</span>Email</a>
-    <a href="https://github.com/snehasharmaa912-ops" target="_blank" rel="noopener"><span class="ic">⌥</span>GitHub</a>
-    <a href="https://www.linkedin.com/in/snehasharmaa2006" target="_blank" rel="noopener"><span class="ic">in</span>LinkedIn</a>
-    <a href="https://leetcode.com/u/snehasharma08" target="_blank" rel="noopener"><span class="ic">◆</span>LeetCode</a>
+    <a href="mailto:kharolapiyush708@gmail.com"><span class="ic" aria-hidden="true">✉</span>Email</a>
+    <a href="tel:+918077207088"><span class="ic" aria-hidden="true">☎</span>Phone</a>
+    <a href="https://github.com/kharolapiyush" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">⌥</span>GitHub</a>
   </div>
 </section>
 
 <footer>
-  <div class="mono-small">S</div>
-  <div class="signature" id="footerSignature">Sneha Sharma</div>
-  <div style="margin-top:10px;">Designed &amp; built from scratch &nbsp;·&nbsp; © 2026</div>
+  <div class="mono-small">P</div>
+  <div class="signature" id="footerSignature">Piyush Kharola</div>
+  <div style="margin-top:10px;">© 2026 · Portfolio design adapted from the <a href="https://github.com/snehasharmaa912-ops/portfolio">original template</a></div>
 </footer>
 
 <script src="script.js"></script>
 </body>
   </html>
-  

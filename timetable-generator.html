@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Timetable Generator &amp; Conflict Resolver — Case Study | Piyush Kharola</title>
+<meta name="description" content="Generates college timetables, flags scheduling conflicts, and supports local repairs when classes need to move.">
+<link rel="stylesheet" href="casestudy.css">
+</head>
+<body>
+<nav class="cs-nav" aria-label="Case study navigation">
+  <div class="brand"><span class="mono">P</span> Piyush Kharola</div>
+  <a class="back" href="index.html#projects">← Back to Portfolio</a>
+</nav>
+
+<main class="cs-wrap">
+  <div class="cs-eyebrow">Case Study · 01</div>
+  <h1 class="cs-title">Advanced Timetable Generator &amp; Conflict Resolver</h1>
+  <p class="cs-tag">Generates college timetables, flags scheduling conflicts, and supports local repairs when classes need to move.</p>
+
+  <div class="cs-meta">
+    <div>Focus<strong>Scheduling · Constraint Satisfaction</strong></div>
+  </div>
+
+  <section class="cs-section">
+    <h2 class="cs-h2">The Problem</h2>
+    <p>College schedules have to fit classes into available rooms and time slots without double-booking teachers, rooms, or student groups.</p>
+  </section>
+
+  <section class="cs-section">
+    <h2 class="cs-h2">The Approach</h2>
+    <ul>
+      <li>Generate schedules with a C++ constraint solver that uses backtracking and greedy heuristics.</li>
+      <li>Review conflicts, make manual edits, and try localized rescheduling without regenerating the entire timetable.</li>
+      <li>Explore schedules by section, faculty, or room, inspect workload analytics, and export a PDF.</li>
+    </ul>
+  </section>
+
+  <section class="cs-section">
+    <h2 class="cs-h2">Architecture</h2>
+    <p>The Python and Streamlit interfaces send JSON requests to a C++ backend. The scheduler, conflict detector, and rescheduler run in the backend. The dashboard turns the returned assignments into timetable views and reports.</p>
+    <div class="cs-stack"><span>Python</span><span>C++</span><span>Streamlit</span><span>Backtracking</span><span>Greedy heuristics</span></div>
+  </section>
+
+  <section class="cs-section">
+    <h2 class="cs-h2">Running the Project</h2>
+    <p>Difficult move requests can reach the configured timeout. The editor surfaces the failure so the operator can choose a different slot or adjust the timeout.</p>
+  </section>
+
+  <div class="cs-cta">
+    <a class="cs-btn" href="https://github.com/kharolapiyush/Time_Table_Generator_and_Conflict_Resolver" target="_blank" rel="noopener">View Source ↗</a>
+    <a class="cs-btn ghost" href="index.html#projects">← All Projects</a>
+  </div>
+</main>
+
+<footer class="cs-footer">Piyush Kharola · © 2026</footer>
+</body>
+</html>
