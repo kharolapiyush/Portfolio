@@ -58,3 +58,18 @@ footer.cs-footer{text-align:center;padding:36px 6vw;border-top:1px solid var(--h
 body{background:linear-gradient(180deg,#080f1c,#102039);min-height:100vh;}
 .cs-btn,.cs-stack span{border-radius:8px;}
 .cs-arch{border-radius:18px;box-shadow:0 18px 40px -26px rgba(4,12,27,.4);}
+
+@media (max-width: 600px) {
+  .cs-nav { padding: 12px 6vw; flex-wrap: wrap; gap: 4px 16px; }
+  .cs-nav .brand { font-size: 16px; }
+  .cs-nav .back, .cs-btn { display: inline-flex; align-items: center; min-height: 44px; }
+  .cs-wrap { padding: 42px 6vw 68px; }
+  .cs-title { font-size: clamp(27px, 8vw, 42px); overflow-wrap: anywhere; }
+  .cs-tag { font-size: 17px; margin-bottom: 24px; }
+  .cs-meta { gap: 16px; padding: 16px 0; margin-bottom: 30px; }
+  .cs-section { margin-bottom: 34px; }
+  .cs-h2 { font-size: 22px; }
+  .cs-arch { padding: 16px; }
+  .cs-cta { gap: 12px; margin-top: 34px; }
+  .cs-btn { padding: 10px 16px; }
+}
