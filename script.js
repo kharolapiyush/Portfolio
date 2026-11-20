@@ -7,18 +7,15 @@
   const ticks = document.querySelectorAll('.scrubber-ticks span');
   if (!slider) return;
 
-  const milestones = {
-    0: { year: '2021', text: "Started Secondary Education at Manava Bharati India International School." },
-    1: { year: '2022', text: "Completed Secondary Education with 87.83% — first real proof that consistency pays off and took on the role of Vice - Caption of Takshashila House at school." },
-    2: { year: '2023', text: "Began Senior Secondary education in PCM + Computer Science, and took on the role of Discipline Incharge at school." },
-    3: { year: '2024', text: "Graduated Senior Secondary with First Division. Started B.Tech in Computer Science & Engineering at Graphic Era Hill University — joined NSS GEHU and Team Aryavart." },
-    4: { year: '2025', text: "Earned AWS Cloud Practitioner Essentials (Feb) and the AWS AI Practitioner Learning Plan (Sep) — building a cloud and AI foundation alongside coursework." },
-    5: { year: '2026', text: "Interning at TBI-GEU and Mirai School of Technology, shipping SheSays, ATSlay, and VibeOps, and completing three Forage job simulations." },
-  };
+  const milestones = [
+    { year: '2022', text: 'Completed CBSE Class X at St. Clare’s Convent School.' },
+    { year: '2024', text: 'Completed CBSE Class XII at Baluni Public School and began studying Computer Science and Engineering at Graphic Era Hill University.' },
+    { year: '2026', text: 'Joined the Apple & Infosys iOS Student Developer Program and began building native iOS apps with Swift and Xcode.' },
+  ];
 
   function update(){
     const val = parseInt(slider.value, 10);
-    const pct = (val / 5) * 100;
+    const pct = (val / Number(slider.max)) * 100;
     fill.style.width = pct + '%';
     const m = milestones[val];
     yearEl.textContent = m.year;
@@ -137,8 +134,32 @@ window.addEventListener('scroll', () => {
 // ============ NAV MOBILE TOGGLE ============
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
+
+// ============ PROJECT CARD FLIPS ============
+document.querySelectorAll('.project-card').forEach(card => {
+  const front = card.querySelector('.front');
+  const back = card.querySelector('.back');
+  const showHighlight = front.querySelector('[data-flip]');
+  const showDetails = back.querySelector('[data-flip]');
+
+  function flip(showBack) {
+    card.classList.toggle('flipped', showBack);
+    front.inert = showBack;
+    back.inert = !showBack;
+    (showBack ? showDetails : showHighlight).focus({ preventScroll: true });
+  }
+
+  showHighlight.addEventListener('click', () => flip(true));
+  back.addEventListener('click', () => flip(false));
+});
 
 // ============ SCROLL REVEAL ============
 const revealEls = document.querySelectorAll('.reveal');
@@ -218,138 +239,63 @@ updateParallax();
 })();
 
 // ============ LIVE GITHUB STATS ============
+const githubUsername = 'kharolapiyush';
+
 (async () => {
-  const el = document.getElementById('statRepos');
+  const count = document.getElementById('statRepos');
+  const status = document.getElementById('statReposStatus');
   try {
-    const res = await fetch('https://api.github.com/users/snehasharmaa912-ops');
-    const data = await res.json();
-    animateCount(el, data.public_repos || 0);
-  } catch (e) {
-    el.textContent = '—';
+    const response = await fetch(`https://api.github.com/users/${githubUsername}`, {
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!response.ok) throw new Error('GitHub profile unavailable');
+    const data = await response.json();
+    if (!Number.isInteger(data.public_repos) || data.public_repos < 0) {
+      throw new Error('Invalid public repository count');
+    }
+    animateCount(count, data.public_repos);
+  } catch {
+    status.textContent = 'GitHub repository count unavailable';
   }
 })();
 
-// ============ GITHUB COMMIT HEATMAP ============
 (async () => {
   const grid = document.getElementById('heatmapGrid');
-  const sub = document.getElementById('heatmapSub');
-  const username = 'snehasharmaa912-ops';
+  const status = document.getElementById('heatmapSub');
   try {
-    const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
-    if (!res.ok) throw new Error('bad response');
-    const data = await res.json();
-    const days = data.contributions || [];
-    const totalKey = Object.keys(data.total || {}).pop();
-    const total = totalKey ? data.total[totalKey] : days.reduce((s, d) => s + d.count, 0);
+    const response = await fetch(
+      `https://github-contributions-api.jogruber.de/v4/${githubUsername}?y=last`,
+      { signal: AbortSignal.timeout(8000) },
+    );
+    if (!response.ok) throw new Error('GitHub contributions unavailable');
+    const { contributions } = await response.json();
+    if (!Array.isArray(contributions) || !contributions.length) {
+      throw new Error('Missing contribution calendar');
+    }
 
-    sub.textContent = `${total} contributions in the last year`;
-
-    grid.innerHTML = '';
-    days.forEach(d => {
+    const cells = document.createDocumentFragment();
+    let total = 0;
+    for (const { date, count, level } of contributions) {
       const cell = document.createElement('div');
       cell.className = 'hm-cell';
-      cell.setAttribute('data-level', d.level ?? 0);
-      cell.title = `${d.date}: ${d.count} commit${d.count === 1 ? '' : 's'}`;
-      grid.appendChild(cell);
-    });
-  } catch (e) {
-    sub.textContent = 'Commit history unavailable right now — check back later.';
-  }
-})();
-
-// ============ LIVE LEETCODE STATS + HEATMAP ============
-(async () => {
-  const el = document.getElementById('statLeetcode');
-  const lcSub = document.getElementById('lcHeatmapSub');
-  const lcGrid = document.getElementById('lcHeatmapGrid');
-  const username = 'snehasharma08';
-
-  // Primary: tashif API returns both solved count AND submissionCalendar in one call
-  try {
-    const res = await fetch(`https://leetcode-stats.tashif.codes/${username}`);
-    if (res.ok) {
-      const data = await res.json();
-      if (typeof data.totalSolved === 'number') {
-        animateCount(el, data.totalSolved);
-        if (data.submissionCalendar) {
-          renderLeetcodeHeatmap(data.submissionCalendar, lcGrid, lcSub);
-          return;
-        }
-      }
+      cell.dataset.level = level;
+      cell.title = `${date}: ${count} contribution${count === 1 ? '' : 's'}`;
+      cells.appendChild(cell);
+      total += count;
     }
-  } catch (e) { /* fall through to fallback endpoints */ }
-
-  // Fallback chain for the solved count only (no heatmap data available)
-  const fallbacks = [
-    { url: `https://alfa-leetcode-api.onrender.com/${username}/solved`, field: 'solvedProblem' },
-    { url: `https://leetcode-stats-api.herokuapp.com/${username}`, field: 'totalSolved' },
-  ];
-  for (const ep of fallbacks) {
-    try {
-      const res = await fetch(ep.url);
-      if (!res.ok) continue;
-      const data = await res.json();
-      const solved = data[ep.field];
-      if (typeof solved === 'number' && solved >= 0) {
-        animateCount(el, solved);
-        lcSub.textContent = 'Submission calendar unavailable right now — check back later.';
-        return;
-      }
-    } catch (e) { /* try next endpoint */ }
+    grid.replaceChildren(cells);
+    status.textContent = `${total} contributions in the last year`;
+  } catch {
+    status.textContent = 'Contribution history unavailable. Visit GitHub for current activity.';
   }
-  el.textContent = '—';
-  lcSub.textContent = 'Stats unavailable right now — check back later.';
 })();
 
-function renderLeetcodeHeatmap(calendar, gridEl, subEl){
-  // calendar: { "unixTimestampSeconds": count }
-  const entries = Object.entries(calendar).map(([ts, count]) => ({
-    date: new Date(parseInt(ts, 10) * 1000),
-    count: parseInt(count, 10),
-  }));
-  entries.sort((a, b) => a.date - b.date);
-
-  const total = entries.reduce((s, e) => s + e.count, 0);
-  subEl.textContent = `${total} submissions in the last year`;
-
-  // Build a continuous day-by-day map for the last 365 days for a clean grid
-  const byDate = {};
-  entries.forEach(e => { byDate[e.date.toISOString().slice(0, 10)] = e.count; });
-
-  const today = new Date();
-  const days = [];
-  for (let i = 364; i >= 0; i--) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    const key = d.toISOString().slice(0, 10);
-    days.push({ date: key, count: byDate[key] || 0 });
-  }
-
-  function levelFor(count){
-    if (count === 0) return 0;
-    if (count <= 1) return 1;
-    if (count <= 3) return 2;
-    if (count <= 6) return 3;
-    return 4;
-  }
-
-  gridEl.innerHTML = '';
-  days.forEach(d => {
-    const cell = document.createElement('div');
-    cell.className = 'hm-cell lc';
-    cell.setAttribute('data-level', levelFor(d.count));
-    cell.title = `${d.date}: ${d.count} submission${d.count === 1 ? '' : 's'}`;
-    gridEl.appendChild(cell);
-  });
-}
-
-function animateCount(el, target){
+function animateCount(el, target) {
   let current = 0;
   const step = Math.max(1, Math.ceil(target / 40));
   const timer = setInterval(() => {
-    current += step;
-    if (current >= target){ current = target; clearInterval(timer); }
+    current = Math.min(current + step, target);
     el.textContent = current;
+    if (current >= target) clearInterval(timer);
   }, 30);
-  }
- 
+}
