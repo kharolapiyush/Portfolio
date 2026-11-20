@@ -55,7 +55,7 @@ function startTypewriter(){
   if (!el) return;
   const full = el.getAttribute('data-full-text') || el.textContent;
   el.textContent = '';
-  el.style.borderRight = '2px solid #e0457b';
+  el.style.borderRight = '2px solid #579dff';
   let i = 0;
   function type(){
     if (i <= full.length){
@@ -69,7 +69,7 @@ function startTypewriter(){
   type();
 }
 
-// ============ CUSTOM CURSOR + GOLD DUST TRAIL ============
+// ============ CUSTOM CURSOR + BLUE DUST TRAIL ============
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
 let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -196,7 +196,7 @@ function updateParallax(){
 }
 updateParallax();
 
-// ============ AMBIENT FLOATING GOLD PARTICLES (canvas) ============
+// ============ AMBIENT FLOATING BLUE PARTICLES (canvas) ============
 (() => {
   const canvas = document.getElementById('ambientCanvas');
   const ctx = canvas.getContext('2d');
@@ -230,7 +230,7 @@ updateParallax();
       if (p.x > w + 10) p.x = -10;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(240,100,150,${p.alpha})`;
+      ctx.fillStyle = `rgba(103,174,255,${p.alpha})`;
       ctx.fill();
     });
     requestAnimationFrame(draw);
